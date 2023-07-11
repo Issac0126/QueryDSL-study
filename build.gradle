@@ -51,10 +51,6 @@ dependencies {
 
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
-
 //querydsl 추가 시작
 // querydsl은 내부적으로 Entity 클래스를 인식해서 그와 비슷한 모양의 QClass를 제작한다.
 // 이 QClass를 이용해서 Entity의 타입을 검증할 수 있고, 그에 맞는 쿼리문을 builder 형태로 제작한다.
@@ -75,3 +71,8 @@ compileQuerydsl {
 	options.annotationProcessorPath = configurations.querydsl
 }
 //querydsl 추가 끝
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
